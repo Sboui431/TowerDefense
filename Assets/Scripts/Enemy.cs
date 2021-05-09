@@ -60,4 +60,21 @@ public class Enemy : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(rotationAngle, Vector3.forward);
     }
 
+    public float DistanceToGoal()
+    {
+        float distance = 0;
+        distance += Vector2.Distance(
+            gameObject.transform.position,
+            waypoints[currentWaypoints + 1].transform.position);
+
+        for(int i=currentWaypoints + 1; i < waypoints.Length - 1; i++)
+        {
+            Vector3 startPosition = waypoints[i].transform.position;
+            Vector3 endPosition = waypoints[i + 1].transform.position;
+            distance = distance + Vector2.Distance(startPosition, endPosition);
+        }
+
+        return distance;
+    }
+
 }
