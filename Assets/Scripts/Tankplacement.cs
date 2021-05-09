@@ -9,11 +9,28 @@ public class Tankplacement : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if(CanPlaceTank())
-            tank = Instantiate(tankPrefab, transform.position, Quaternion.identity);
+        if (CanPlaceTank())
+        {
+            int cost = tankPrefab.GetComponent<TankData>().level[0].cost;
+            if(GameManager.singleton.GetCoins() >= cost)
+            {
+                tank = Instantiate(tankPrefab, transform.position, Quaternion.identity);
+                GameManager.singleton.SetCoins(GameManager.singleton.GetCoins()
+                    - tank.GetComponent<TankData>().currentLevel.cost);
+            }
+            
+        }
+            
         else if (CanUpgradeTank())
         {
-            tank.GetComponent<TankData>().IncreaseLevel();
+            int cost = tank.GetComponent<TankData>().GetNextLevel().cost;
+            if(GameManager.singleton.GetCoins() >= cost)
+            {
+                tank.GetComponent<TankData>().IncreaseLevel();
+                GameManager.singleton.SetCoins(GameManager.singleton.GetCoins()
+                    - tank.GetComponent<TankData>().currentLevel.cost);
+            }
+            
         }
     }
 

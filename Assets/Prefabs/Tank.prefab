@@ -49,17 +49,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level:
-  - cost: 0
+  - cost: 100
     display: {fileID: 7395151974392489575}
     bullet: {fileID: 7605392126198369361, guid: 9ed58117d61355e4fae0360bd54ef4c9,
       type: 3}
     fireRate: 1
-  - cost: 0
+  - cost: 150
     display: {fileID: 5493631662251470958}
     bullet: {fileID: 2925347082417506317, guid: 8ef799389a687fd43b4ba0485de3de1e,
       type: 3}
     fireRate: 1
-  - cost: 0
+  - cost: 150
     display: {fileID: 3800223939959429869}
     bullet: {fileID: 6664865702984907781, guid: 00c1e0e5e78ee8f4a9d21a88babb467b,
       type: 3}

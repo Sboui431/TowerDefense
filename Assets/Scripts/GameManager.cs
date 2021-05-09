@@ -6,11 +6,11 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public Text coinslabel;
+    public Text coinsLabel;
     public int coins = 1000;
 
     public Text waveLabel;
-    public bool gameover;
+    public bool gameOver =false;
     private int wave;
 
     public Text healthLabel;
@@ -58,6 +58,11 @@ public class GameManager : MonoBehaviour
         wave = value;
     }
 
+    public int GetWave()
+    {
+        return wave;
+    }
+
     public void ShowWave()
     {
         waveLabel.text = "Wave: " + wave;
@@ -67,9 +72,9 @@ public class GameManager : MonoBehaviour
     {
         health = value;
 
-        if(health <= 0 && !gameover)
+        if(health <= 0 && !gameOver)
         {
-            gameover = true;
+            gameOver = true;
             Time.timeScale = 0.0f;
             gameOverPanel.SetActive(true);
         }
@@ -107,6 +112,9 @@ public class GameManager : MonoBehaviour
 
     public void ShowCoins()
     {
-        coinslabel.text = "Coins: " + coins;
+        coinsLabel.text = "Coins: " + coins;
     }
 }
+
+
+

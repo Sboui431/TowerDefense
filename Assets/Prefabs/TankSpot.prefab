@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 58917143476933314}
   - component: {fileID: 8078092250184605371}
   - component: {fileID: 114890999349344908}
+  - component: {fileID: 2603921663959609423}
   m_Layer: 0
   m_Name: TankSpot
   m_TagString: Untagged
@@ -89,7 +90,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619361105356101782}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -128,12 +129,46 @@ MonoBehaviour:
   - cost: 0
     display: {fileID: 3994233649125762388, guid: 3bce7a034a5673a45b6b032ee8de3e48,
       type: 3}
+    bullet: {fileID: 0}
+    fireRate: 0
   - cost: 0
     display: {fileID: 7847706957067004381, guid: 8b6537ce2fb308f4d8080c53e7d80a5b,
       type: 3}
+    bullet: {fileID: 0}
+    fireRate: 0
   - cost: 0
     display: {fileID: 1000751397512821046, guid: cda273edbb13113428ae386de310f01b,
       type: 3}
+    bullet: {fileID: 0}
+    fireRate: 0
   currentLevel:
     cost: 0
     display: {fileID: 0}
+    bullet: {fileID: 0}
+    fireRate: 0
+--- !u!61 &2603921663959609423
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619361105356101782}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.2, y: 1.2}
+    newSize: {x: 1.2, y: 1.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.2, y: 1.2}
+  m_EdgeRadius: 0
